@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import {getCountries, getCountriesWithSearch} from '../../services/CountriesService'
 import SearchBar from '../SearchBar/SearchBar'
-import CountriesGrid from '../CountriesList/CountriesGrid'
+import CountriesGrid from '../CountriesGrid/CountriesGrid'
 import './CountriesHome.css'
 import Pager from '../Pager/Pager'
 
