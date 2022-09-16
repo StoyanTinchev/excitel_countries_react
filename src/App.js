@@ -1,10 +1,17 @@
-import './App.css';
-import PromisesTask from "./components/PromisesTask";
+import './App.css'
+import CountriesHome from './components/CountriesHome/CountriesHome'
+import {BrowserRouter, Route, Routes} from 'react-router-dom'
+import CountryItem from './components/CountryItem/CountryItem'
 
 function App() {
-  return (
-      <PromisesTask />
-  );
+	return (
+		<BrowserRouter>
+			<Routes>
+				<Route path="/" element={<CountriesHome/>}/>
+				<Route path="/:name" element={<CountryItem/>}/>
+			</Routes>
+		</BrowserRouter>
+	)
 }
 
-export default App;
+export default App

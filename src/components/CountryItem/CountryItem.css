@@ -1,0 +1,15 @@
+.countryInfoLayout {
+    margin: auto;
+    text-align: center;
+    padding: 2rem;
+}
+
+img {
+    width: 45%;
+    height: 75%;
+}
+
+.countryInfo {
+    display: flex;
+    flex-direction: column;
+}

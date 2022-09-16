@@ -1,0 +1,10 @@
+.spinnerContainer {
+    display: flex;
+    height: 100vh;
+}
+
+.bootstrapSpinner {
+    margin: auto;
+    width: 6rem;
+    height: 6rem;
+}
