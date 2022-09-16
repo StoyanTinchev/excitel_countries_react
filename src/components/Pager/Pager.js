@@ -8,29 +8,53 @@ function Pager({initialCountries, setCountries}) {
 		setCountries(initialCountries.slice(pageNumber - 1, pageNumber * 10))
 	}, [initialCountries])
 
-	return (
-		<div>
-			<button
-				className="pager-button"
-				onClick={() => {
-					if (pageNumber > 1) {
-						setCountries(initialCountries.slice((pageNumber - 2) * 10, (pageNumber - 1) * 10))
-						setPageNumber(pageNumber - 1)
-					}
-				}}>
-				Previous
-			</button>
+	const checkPagerEnd = () => {
+		return Math.ceil(initialCountries.length / 10)
+	}
 
-			<button
-				className="pager-button"
-				onClick={() => {
-					if (pageNumber < Math.ceil(initialCountries.length / 10)) {
-						setCountries(initialCountries.slice(pageNumber * 10, (pageNumber + 1) * 10))
-						setPageNumber(pageNumber + 1)
-					}
-				}}>
-				Next
-			</button>
+	const showPrevBtnOnly = () => {
+		return (<button
+			className="pagerBtnPrev"
+			onClick={() => {
+				if (pageNumber > 1) {
+					setCountries(initialCountries.slice((pageNumber - 2) * 10, (pageNumber - 1) * 10))
+					setPageNumber(pageNumber - 1)
+				}
+			}}>
+			&#8249;
+		</button>)
+	}
+
+	const showNextBtnOnly = () => {
+		return (<button
+			className="pagerBtnNext"
+			onClick={() => {
+				if (pageNumber < checkPagerEnd()) {
+					setCountries(initialCountries.slice(pageNumber * 10, (pageNumber + 1) * 10))
+					setPageNumber(pageNumber + 1)
+				}
+			}}>
+			&#8250;
+		</button>)
+
+	}
+
+	const showBtns = () => {
+		if (pageNumber === 1 && pageNumber !== checkPagerEnd()) {
+			return showNextBtnOnly()
+		} else if (pageNumber > 1 && pageNumber < checkPagerEnd()) {
+			return (<>
+				{showPrevBtnOnly()}
+				{showNextBtnOnly()}
+			</>)
+		} else if (pageNumber !== 1 && pageNumber === checkPagerEnd()) {
+			return showPrevBtnOnly()
+		}
+	}
+
+	return (
+		<div className="pagerBtnsLayout">
+			{showBtns()}
 		</div>
 	)
 }

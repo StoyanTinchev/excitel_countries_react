@@ -24,7 +24,6 @@ function CountriesHome() {
 
 	return (
 		<div className="countriesHome">
-
 			<SearchBar setSearch={setSearch}/>
 
 			<CountriesGrid

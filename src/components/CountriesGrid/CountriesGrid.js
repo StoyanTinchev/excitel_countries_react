@@ -45,7 +45,7 @@ function CountriesGrid({countries, setCountries, loading}) {
 		loading ?
 			<BootstrapSpinner/>
 			:
-			<section className="countriesList">
+			<div className="countriesList">
 				<div className="countriesListHeader">
 					<span onClick={() => sortCountries('name')}>Name</span>
 					<span onClick={() => sortCountries('capitalName')}>Capital</span>
@@ -67,7 +67,7 @@ function CountriesGrid({countries, setCountries, loading}) {
 						)) :
 						<span>No countries found</span>
 				}
-			</section>
+			</div>
 	)
 }
 

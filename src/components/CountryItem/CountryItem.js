@@ -13,7 +13,6 @@ function CountryItem(
 		subregion,
 		code,
 		flag,
-		latLng,
 	}) {
 
 	const paramCountryName = useParams()
@@ -42,12 +41,6 @@ function CountryItem(
 					<span><strong>Sub-region: </strong>{subregion ?? country.subregion}</span>
 
 					<span><strong>Code: </strong>{code ?? country.code}</span>
-
-					{/*<div><strong>Latitude/Longitude: </strong>*/}
-					{/*	<span>{*/}
-					{/*		latLng ? `${latLng[0]}/${latLng[1]}`*/}
-					{/*		: `${country.latLng[0]}/${country.latLng[1]}`*/}
-					{/*	}</span></div>*/}
 				</div>
 			</div>
 	)
